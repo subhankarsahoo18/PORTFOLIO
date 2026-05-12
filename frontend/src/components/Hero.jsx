@@ -117,6 +117,35 @@ export default function Hero() {
           <div className="hero-btns" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <a href="#contact" className="btn-primary">Contact Me</a>
             <a href="#projects" className="btn-outline">View Work</a>
+            <a
+              href="https://portfolio-rtpl.onrender.com/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255,255,255,0.15)',
+                color: '#b9cac9',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '13px',
+                letterSpacing: '0.06em',
+                textDecoration: 'none',
+                background: 'rgba(255,255,255,0.04)',
+                transition: 'border-color 0.3s, color 0.3s, background 0.3s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,221,221,0.5)'; e.currentTarget.style.color = '#00dddd'; e.currentTarget.style.background = 'rgba(0,221,221,0.07)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = '#b9cac9'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Resume
+            </a>
           </div>
 
           {/* Stats row */}

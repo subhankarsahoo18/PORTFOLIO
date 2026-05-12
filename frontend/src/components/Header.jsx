@@ -56,6 +56,36 @@ export default function Header() {
                 {item}
               </a>
             ))}
+            <a
+              href="https://portfolio-rtpl.onrender.com/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '8px 18px',
+                borderRadius: '6px',
+                border: '1px solid rgba(0,221,221,0.5)',
+                color: '#00dddd',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '12px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                background: 'rgba(0,221,221,0.06)',
+                transition: 'background 0.3s, box-shadow 0.3s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,221,221,0.14)'; e.currentTarget.style.boxShadow = '0 0 14px rgba(0,221,221,0.2)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,221,221,0.06)'; e.currentTarget.style.boxShadow = 'none'; }}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dddd" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Resume
+            </a>
           </nav>
         </div>
       </header>
@@ -80,12 +110,13 @@ export default function Header() {
           { label: 'Work', icon: '💻', href: '#projects' },
           { label: 'History', icon: '📋', href: '#experience' },
           { label: 'Contact', icon: '✉️', href: '#contact' },
+          { label: 'Resume', icon: '📄', href: 'https://portfolio-rtpl.onrender.com/resume.pdf', target: '_blank' },
         ].map(item => (
-          <a key={item.label} href={item.href} style={{
+          <a key={item.label} href={item.href} target={item.target || '_self'} rel={item.target ? 'noopener noreferrer' : undefined} style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            color: '#b9cac9',
+            color: item.label === 'Resume' ? '#00dddd' : '#b9cac9',
             textDecoration: 'none',
             transition: 'color 0.3s',
           }}>

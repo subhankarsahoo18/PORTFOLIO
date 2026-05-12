@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
@@ -9,6 +10,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static files (resume.pdf, etc.) from the public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Dedicated resume route — redirects to the static file
+app.get('/resume', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'resume.pdf'));
+});
 
 // Basic health check route
 app.get('/api/health', (req, res) => {
