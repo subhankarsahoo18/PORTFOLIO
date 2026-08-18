@@ -116,11 +116,11 @@ export default function About() {
               marginBottom: '20px',
             }}>
               I'm a <span style={{ color: '#00dddd', fontWeight: 600 }}>MERN Stack Developer</span> currently
-              pursuing my BCA at{' '}
+              pursuing my MCA at{' '}
               <span style={{ color: '#ffffff', fontWeight: 500 }}>
-                Trident Academy of Creative Technology
+                Kalinga Institute Of Industrial Technology (KIIT)
               </span>
-              , Bhubaneswar.
+              ,Bhubaneswar,Odisha,India.
             </p>
 
             <p style={{
@@ -154,8 +154,8 @@ export default function About() {
             {/* Info rows */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
-                ['🎓', 'Education', 'BCA — Trident Academy of Creative Technology'],
-                ['📍', 'Location', 'Bhubaneswar, Odisha, India'],
+                ['🎓', 'Education', 'MCA — Kalinga Institute Of Industrial Technology (KIIT),Bhubaneswar'],
+                ['📍', 'Location', 'Bhubaneswar,Odisha,India'],
                 ['✉️', 'Email', 'subhankarsahoo615@gmail.com'],
               ].map(([icon, label, value]) => (
                 <div key={label} style={{
